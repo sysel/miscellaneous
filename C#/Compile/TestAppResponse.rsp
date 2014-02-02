@@ -1,0 +1,5 @@
+# external assembly references
+/r:System.Windows.Forms.dll
+
+# output and files to compile
+/target:exe /out:TestAppResponse.exe TestApp.cs HelloMsg.cs
