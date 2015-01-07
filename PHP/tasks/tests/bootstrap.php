@@ -3,7 +3,7 @@
  * Tests bootstrap using Nette Tester (http://tester.nette.org/)
  */
 
-require_once __DIR__ . '/../Tester/tester.phar';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 // Task files
 require_once __DIR__ . '/../Task/ITask.php';

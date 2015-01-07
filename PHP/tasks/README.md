@@ -38,3 +38,8 @@ Simple library for running time consuming tasks using HTTP protocol.
 	
 	// done
 	echo "All tasks finished\n";
+
+## Running tests
+
+	composer update
+	vendor/bin/tester tests
