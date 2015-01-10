@@ -3,6 +3,8 @@ namespace Task\ProgressStorage;
 
 /**
  * File storage for current state of TaskRunner
+ *
+ * @author Vojtech Sysel
  */
 class File implements IStorage
 {
@@ -28,6 +30,7 @@ class File implements IStorage
 	/**
 	 * Set current state to storage
 	 * @param array Current state
+	 * @return void
 	 */
 	public function setState($state) {
 		$content = serialize($state);
@@ -36,6 +39,7 @@ class File implements IStorage
 
 	/**
 	 * Clear storage
+	 * @return void
 	 */
 	public function clear() {
 		if (file_exists($this->file)) {

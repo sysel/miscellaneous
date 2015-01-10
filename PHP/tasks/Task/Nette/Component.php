@@ -6,6 +6,8 @@ use Task,
 
 /**
  * Task component for Nette
+ *
+ * @author Vojtech Sysel
  */
 class Component extends Nette\Application\UI\Control
 {

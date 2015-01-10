@@ -3,6 +3,8 @@ namespace Task\ProgressStorage;
 
 /**
  * Interface for progress storage
+ *
+ * @author Vojtech Sysel
  */
 interface IStorage
 {
@@ -15,11 +17,13 @@ interface IStorage
 	/**
 	 * Set current state to storage
 	 * @param array Current state
+	 * @return void
 	 */
 	function setState($state);
 
 	/**
 	 * Clear storage
+	 * @return void
 	 */
 	function clear();
 }

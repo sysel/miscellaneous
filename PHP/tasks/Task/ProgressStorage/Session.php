@@ -3,6 +3,8 @@ namespace Task\ProgressStorage;
 
 /**
  * Session storage for current state of TaskRunner
+ *
+ * @author Vojtech Sysel
  */
 class Session implements IStorage
 {
@@ -51,6 +53,7 @@ class Session implements IStorage
 	/**
 	 * Set current state to storage
 	 * @param array Current state
+	 * @return void
 	 */
 	public function setState($state) {
 		$_SESSION[$this->name] = $state;
@@ -58,6 +61,7 @@ class Session implements IStorage
 	
 	/**
 	 * Clear storage
+	 * @return void
 	 */
 	public function clear() {
 		unset($_SESSION[$this->name]);

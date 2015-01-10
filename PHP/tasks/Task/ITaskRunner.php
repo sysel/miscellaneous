@@ -3,6 +3,8 @@ namespace Task;
 
 /**
  * Runner for tasks
+ *
+ * @author Vojtech Sysel
  */
 interface ITaskRunner
 {
@@ -11,12 +13,14 @@ interface ITaskRunner
 
 	/**
 	 * Add task to runner
-	 * @param \Task\ITask Task
+	 * @param Task\ITask Task
+	 * @return void
 	 */
 	function addTask(ITask $task);
 
 	/**
 	 * Run all tasks
+	 * @return void
 	 */
 	function run();
 
@@ -28,6 +32,7 @@ interface ITaskRunner
 
 	/**
 	 * Get progress information about tasks
+	 * @return array
 	 */
 	function getProgress();
 }

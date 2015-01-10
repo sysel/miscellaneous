@@ -3,17 +3,19 @@ namespace Task;
 
 /**
  * Simple runner for Tasks
+ *
+ * @author Vojtech Sysel
  */
 class SimpleRunner implements ITaskRunner
 {
-	/** @var \Task\ProgressStorage\IStorage $progressStorage Progress storage */
+	/** @var Task\ProgressStorage\IStorage $progressStorage Progress storage */
 	private $progressStorage;
 
-	/** @var \Task\ITask[] $tasks Tasks in runner */
+	/** @var Task\ITask[] $tasks Tasks in runner */
 	private $tasks = array();
 
 	/**
-	 * @param \Task\ProgressStorage\IStorage Storage for task progress
+	 * @param Task\ProgressStorage\IStorage Storage for task progress
 	 */
 	public function __construct(ProgressStorage\IStorage $storage) {
 		$this->progressStorage = $storage;
@@ -21,7 +23,7 @@ class SimpleRunner implements ITaskRunner
 
 	/**
 	 * Add task to runner
-	 * @param \Task\ITask Task
+	 * @param Task\ITask Task
 	 * @return SimpleRunner
 	 */
 	public function addTask(ITask $task) {
@@ -31,6 +33,7 @@ class SimpleRunner implements ITaskRunner
 
 	/**
 	 * Run all tasks
+	 * @return void
 	 */
 	public function run() {
 		// load current state
@@ -54,6 +57,7 @@ class SimpleRunner implements ITaskRunner
 
 	/**
 	 * Get current runner state
+	 * @return array
 	 */
 	protected function getState() {
 		$savedState = $this->progressStorage->getState();
@@ -76,6 +80,9 @@ class SimpleRunner implements ITaskRunner
 
 	/**
 	 * Set current runner state
+	 * @param array Current tasks state
+	 * @param string Current task key
+	 * @return void
 	 */
 	protected function setState($state, $taskKey) {
 		$state[$taskKey] = self::TASK_FINISHED;
@@ -104,6 +111,7 @@ class SimpleRunner implements ITaskRunner
 
 	/**
 	 * Get progress information about tasks
+	 * @return array
 	 */
 	public function getProgress() {
 		$progress = array(

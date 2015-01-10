@@ -3,6 +3,8 @@ namespace Task;
 
 /**
  * Interface for simple task
+ *
+ * @author Vojtech Sysel
  */
 interface ITask
 {
@@ -14,6 +16,7 @@ interface ITask
 
 	/**
 	 * Execute selected task
+	 * @return void
 	 */
 	function execute();
 }
