@@ -1,0 +1,20 @@
+{**
+ * Template for Task Component
+ *
+ * @param bool     $inProgress          Task is still in progress
+ * @param int      $progressPercentage  Current progress in percents
+ * @param array    $flashes             flash messages
+ *}
+
+{snippet taskComponent}
+{foreach $flashes as $flash}
+<div class="flash {$flash->type}">{$flash->message}</div>
+{/foreach}
+
+<div class="progress{if $inProgress} progress-striped active{/if}">
+	<div class="bar" style="width: {$progressPercentage}%;"></div>
+</div>
+{if $inProgress}
+	<a n:href="step!" class="ajax" id="progress-{$componentName}">Next step</a>
+{/if}
+{/snippet}
