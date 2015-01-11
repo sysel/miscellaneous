@@ -43,3 +43,7 @@ Simple library for running time consuming tasks using HTTP protocol.
 
 	composer update
 	vendor/bin/tester tests
+
+## Running code checker
+
+	vendor/bin/phpcs --standard=standards.xml --tab-width=4 Task

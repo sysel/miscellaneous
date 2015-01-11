@@ -58,7 +58,7 @@ class Session implements IStorage
 	public function setState($state) {
 		$_SESSION[$this->name] = $state;
 	}
-	
+
 	/**
 	 * Clear storage
 	 * @return void

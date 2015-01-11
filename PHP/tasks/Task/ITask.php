@@ -12,11 +12,11 @@ interface ITask
 	 * Task name
 	 * @return string
 	 */
-	function getName();
+	public function getName();
 
 	/**
 	 * Execute selected task
 	 * @return void
 	 */
-	function execute();
+	public function execute();
 }

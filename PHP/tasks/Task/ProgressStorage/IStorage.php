@@ -12,18 +12,18 @@ interface IStorage
 	 * Get current state from storage
 	 * @return mixed
 	 */
-	function getState();
+	public function getState();
 
 	/**
 	 * Set current state to storage
 	 * @param array Current state
 	 * @return void
 	 */
-	function setState($state);
+	public function setState($state);
 
 	/**
 	 * Clear storage
 	 * @return void
 	 */
-	function clear();
+	public function clear();
 }

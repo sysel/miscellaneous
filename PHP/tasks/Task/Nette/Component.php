@@ -25,7 +25,8 @@ class Component extends Nette\Application\UI\Control
 	 * @param Nette\ComponentModel\IContainer Parent component
 	 * @param string Component name
 	 */
-	public function __construct(Task\ITaskRunner $runner, Nette\ComponentModel\IContainer $parent = NULL, $name = NULL) {
+	public function __construct(Task\ITaskRunner $runner, Nette\ComponentModel\IContainer $parent = NULL,
+			$name = NULL) {
 		parent::__construct($parent, $name);
 
 		$this->runner = $runner;
@@ -60,8 +61,10 @@ class Component extends Nette\Application\UI\Control
 		$template->setFile(__DIR__ . '/taskComponent.latte');
 
 		$progress = $this->runner->getProgress();
+		$percentage = round(($progress['done'] / ($progress['count'] == 0 ? 1 : $progress['count'])) * 100);
+
 		$template->inProgress = $progress['remain'] !== 0;
-		$template->progressPercentage = round(($progress['done'] / ($progress['count'] == 0 ? 1 : $progress['count'])) * 100);
+		$template->progressPercentage = $percentage;
 		$template->componentName = $this->getName();
 
 		$template->render();

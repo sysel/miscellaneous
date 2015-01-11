@@ -16,23 +16,23 @@ interface ITaskRunner
 	 * @param Task\ITask Task
 	 * @return void
 	 */
-	function addTask(ITask $task);
+	public function addTask(ITask $task);
 
 	/**
 	 * Run all tasks
 	 * @return void
 	 */
-	function run();
+	public function run();
 
 	/**
 	 * Returns true if all tasks are finished
 	 * @return bool
 	 */
-	function isFinished();
+	public function isFinished();
 
 	/**
 	 * Get progress information about tasks
 	 * @return array
 	 */
-	function getProgress();
+	public function getProgress();
 }
