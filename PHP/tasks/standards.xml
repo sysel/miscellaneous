@@ -30,12 +30,7 @@
 	<rule ref="Generic.Formatting.SpaceAfterCast"/>
 	<rule ref="Generic.Functions.CallTimePassByReference"/>
 	<rule ref="Generic.Functions.FunctionCallArgumentSpacing"/>
-	<!--
-	TODO: OpeningFunctionBraceKernighanRitchieSniff is not working
-	<rule ref="Generic.Functions.OpeningFunctionBraceKernighanRitchieSniff"/>
-	
-	<rule ref="Generic.Functions.OpeningFunctionBraceBsdAllman"/>
-	-->
+	<rule ref="Generic.Functions.OpeningFunctionBraceKernighanRitchie"/>
 	<rule ref="Generic.Metrics.NestingLevel"/>
 	<rule ref="Generic.NamingConventions.ConstructorName"/>
 	<rule ref="Generic.NamingConventions.UpperCaseConstantName"/>
