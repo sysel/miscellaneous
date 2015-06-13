@@ -1,4 +1,4 @@
 miscellaneous
 =============
 
-Various code snippets in different laguages
+Various code snippets in different languages just for my personal use.
