@@ -9,7 +9,7 @@ use Mock,
 require_once __DIR__ . '/../bootstrap.php';
 
 /**
- * @testcase
+ * @testCase
  */
 class BaseObjectTest extends Tester\TestCase
 {
@@ -46,11 +46,30 @@ class BaseObjectTest extends Tester\TestCase
 		// assert
 		Assert::true($classInstance instanceof IDummyType);
 	}
+
+	public function testMethodInvoke() {
+		// arrange
+		$classReflection = Nette\Reflection\ClassType::from('Mock\\Tests\\TestMethodClass');
+		$helloMethod = $classReflection->getMethod('sayHello');
+		// act
+		$helloMethod->setAccessible(TRUE);
+		$target = $helloMethod->invoke(new TestMethodClass(), 'people');
+		$helloMethod->setAccessible(FALSE);
+		// assert
+		Assert::same('Hello people', $target);
+	}
 }
 
 interface IDummyType
 {
 	public function getName();
+}
+
+class TestMethodClass
+{
+	private function sayHello($name = 'world') {
+		return "Hello {$name}";
+	}
 }
 
 $testCase = new BaseObjectTest;
