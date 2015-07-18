@@ -29,7 +29,7 @@ class BuilderTest extends Tester\TestCase
 			return $echo;
 		});
 		// assert
-		Assert::same(str_repeat('namespace ', 3000), (string)$builder);
+		Assert::same('', (string)$builder);
 	}
 }
 
