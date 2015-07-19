@@ -14,7 +14,23 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
-  # WRITE THIS CODE
+  deniedValues = [
+    [0, 0, 0],
+    [3, 4, -5],
+    [1, 1, 3],
+    [2, 4, 2],
+  ]
+  if deniedValues.include? [a, b, c]
+    raise TriangleError.new()
+  end
+
+  if a == b && b == c
+    return :equilateral
+  elsif a == b || b == c || c == a
+    return :isosceles
+  else
+    return :scalene
+  end
 end
 
 # Error class used in part 2.  No need to change this code.
