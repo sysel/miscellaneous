@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title><%= node['hostname'] %></title>
+</head>
+<body>
+<p>This site was setup by <%= node['hostname'] %>.</p>
+<p>My network addresses are:
+<code>
+<% node['network']['interfaces'].keys.each do |iface_name| %>
+ * <%= iface_name %>:
+     <%= node['network']['interfaces'][iface_name]['addresses'].keys[1] %>
+<% end %>
+</code>
+</p>
+</body>
+</html>
