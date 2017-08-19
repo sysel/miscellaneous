@@ -1,0 +1,24 @@
+{
+    "name": "sysel/password-complexity",
+    "type": "library",
+    "description": "",
+    "keywords": ["password", "complexity"],
+    "homepage": "https://github.com/sysel/miscellaneous",
+    "license": ["BSD-3", "GPL-2.0", "GPL-3.0"],
+    "authors": [{
+        "name": "Vojtech Sysel"
+    }],
+    "support": {
+        "issues": "https://github.com/sysel/miscellaneous/issues"
+    },
+    "require": {
+        "php": ">=5.3"
+    },
+    "autoload": {
+		"classmap": ["src/"]
+	},
+    "minimum-stability": "beta",
+    "require-dev": {
+        "nette/tester": "~1.7"
+    }
+}
